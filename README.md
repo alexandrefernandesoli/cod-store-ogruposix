@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Online Store - Cash on Delivery (COD)
 
-## Getting Started
+Este é um projeto de uma página de vendas online para uma loja que utiliza o sistema de "Cash on Delivery" (COD). O projeto foi desenvolvido como parte de uma vaga de emprego para a empresa Grupo SIX, utilizando Next.js, TailwindCSS, HTML, CSS e JavaScript.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Página inicial**: Exibe um vídeo promocional com uma **headline** (título acima do vídeo).
+- **Lista de produtos**: Mostra os produtos disponíveis para compra com botões de "Comprar".
+- **Formulário de compra**: Ao clicar em "Comprar", um formulário solicita as informações básicas do comprador (nome, endereço, etc.) para finalizar a compra.
+
+## Tecnologias Utilizadas
+
+- **React**: Biblioteca JavaScript para criação de interfaces de usuário.
+- **Next.js**: Framework React para renderização do lado do servidor e roteamento.
+- **TailwindCSS**: Framework CSS utilitário para estilização rápida e responsiva.
+
+## Variáveis de Ambiente
+
+Para que o projeto funcione corretamente, é necessário configurar a seguinte variável de ambiente no arquivo `.env` na raiz do projeto:
+
+```
+API_USER_TOKEN=seu_token_de_usuario
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esta variável é utilizada para autenticação nas chamadas à API do backend, que gerencia os pedidos.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como Rodar o Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Siga os passos abaixo para rodar o projeto localmente:
 
-## Learn More
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Instale as dependências**:
+   Certifique-se de ter o Node.js e o npm instalados. Em seguida, rode:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Configure as variáveis de ambiente**:
+   Crie um arquivo `.env` na raiz do projeto com a seguinte variável:
+   ```bash
+   NEXT_PUBLIC_API_USER_TOKEN=seu_token_de_usuario
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Execute o servidor de desenvolvimento**:
+   Para iniciar o ambiente de desenvolvimento local, execute:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+5. **Acesse o projeto**:
+   Abra seu navegador e vá para [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. **Build para Produção (Opcional)**:
+   Para criar uma versão de produção, execute:
+   ```bash
+   npm run build
+   npm start
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Contribuição
+
+Este projeto é um trabalho individual criado para fins de avaliação profissional. Sugestões são bem-vindas!
+
+## Licença
+
+Este projeto está sob a licença MIT.
