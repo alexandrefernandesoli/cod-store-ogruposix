@@ -35,6 +35,7 @@ export default function ProductModal({ product }: { product: Product }) {
         modal.style.height = showThankYou ? "fit-content" : `${height}px`;
       }
     }
+    adjustModalHeight();
 
     window.addEventListener("load", adjustModalHeight);
     window.addEventListener("resize", adjustModalHeight);
