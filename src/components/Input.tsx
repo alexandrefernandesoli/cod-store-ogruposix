@@ -11,7 +11,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, id, name, type, error, ...rest }, ref) => {
     return (
       <div className="mb-2">
-        <label htmlFor={id || name}>{label}</label>
+        <label
+          htmlFor={id || name}
+          className={twMerge("font-medium", error ? "text-red-500" : "")}
+        >
+          {label}
+        </label>
         <input
           {...rest}
           ref={ref}

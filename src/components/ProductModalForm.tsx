@@ -72,7 +72,7 @@ export default function ProductModalForm({
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col">
-      <h2 className="text-2xl font-bold mb-2">Dados do comprador</h2>
+      <h2 className="text-2xl mb-2">Dados do comprador</h2>
       <Input
         {...register("name", { required: "Campo obrigatório" })}
         label="Nome"
@@ -102,7 +102,7 @@ export default function ProductModalForm({
 
       <hr className="my-4" />
 
-      <h3 className="text-xl mb-3">Endereço de entrega</h3>
+      <h3 className="text-2xl mb-2">Endereço de entrega</h3>
 
       <Input
         {...register("street", { required: "Campo obrigatório" })}
@@ -148,7 +148,7 @@ export default function ProductModalForm({
         className="mt-4 flex items-center justify-center"
         disabled={loading}
       >
-        Comprar {loading ? <LoadingSpinner className="ml-2" /> : null}
+        Confirmar compra {loading ? <LoadingSpinner className="ml-2" /> : null}
       </Button>
     </form>
   );
