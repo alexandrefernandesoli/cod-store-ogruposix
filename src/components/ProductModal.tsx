@@ -26,16 +26,18 @@ export default function ProductModal({ product }: { product: Product }) {
     setShowThankYou(true);
   }
 
-  function adjustModalHeight() {
-    const height = window.innerHeight;
-    const modal = document.querySelector(".modal") as HTMLElement;
 
-    if (modal) {
-      modal.style.height = `${height}px`;
-    }
-  }
 
   useEffect(() => {
+    function adjustModalHeight() {
+      const height = window.innerHeight;
+      const modal = document.querySelector(".modal") as HTMLElement;
+  
+      if (modal) {
+        modal.style.height = showThankYou ? 'fit-content' : `${height}px`;
+      }
+    }
+
     window.addEventListener("load", adjustModalHeight);
     window.addEventListener("resize", adjustModalHeight);
 
@@ -43,7 +45,7 @@ export default function ProductModal({ product }: { product: Product }) {
       window.removeEventListener("load", adjustModalHeight);
       window.removeEventListener("resize", adjustModalHeight);
     };
-  }, []);
+  }, [showThankYou]);
 
   return (
     <>
