@@ -36,7 +36,7 @@ export default function ProductModal({ product }: { product: Product }) {
           onClick={() => (showThankYou ? closeModal() : null)}
         >
           <div
-            className="relative w-full max-w-4xl max-h-screen overflow-auto p-8 bg-white rounded-lg shadow-lg"
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-auto p-8 bg-white rounded-lg shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button className="absolute top-0 right-0 p-4" onClick={closeModal}>
