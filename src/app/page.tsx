@@ -3,7 +3,6 @@ import ProductCard from "@/components/ProductCard";
 import VideoFrame from "@/components/VideoFrame";
 import { fetchData } from "@/lib/api";
 import { extractYouTubeID } from "@/lib/utils";
-import { twMerge } from "tailwind-merge";
 
 export default async function Home() {
   const sampleData = await fetchData();

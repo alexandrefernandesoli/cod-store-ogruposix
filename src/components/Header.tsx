@@ -1,6 +1,5 @@
 "use client";
 
-import { twMerge } from "tailwind-merge";
 import EntregaRapida from "@/assets/images/entrega-rapida.png";
 import Image from "next/image";
 import Link from "next/link";
