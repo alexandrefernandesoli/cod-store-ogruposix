@@ -9,7 +9,7 @@ import ProductModalInfo from "./ProductModalInfo";
 
 export default function ProductModal({ product }: { product: Product }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(true);
 
   function openModal() {
     setIsOpen(true);
@@ -26,15 +26,13 @@ export default function ProductModal({ product }: { product: Product }) {
     setShowThankYou(true);
   }
 
-
-
   useEffect(() => {
     function adjustModalHeight() {
       const height = window.innerHeight;
       const modal = document.querySelector(".modal") as HTMLElement;
-  
+
       if (modal) {
-        modal.style.height = showThankYou ? 'fit-content' : `${height}px`;
+        modal.style.height = showThankYou ? "fit-content" : `${height}px`;
       }
     }
 
@@ -65,7 +63,7 @@ export default function ProductModal({ product }: { product: Product }) {
             </button>
             <div className="flex sm:flex-row flex-col">
               {showThankYou ? (
-                <div className="flex-1 py-4 sm:px-8 sm:py-0">
+                <div className="flex-1 py-4 sm:px-8 sm:py-0 flex flex-col justify-center items-center">
                   <h2 className="text-xl font-bold text-center">
                     Obrigado pela compra!
                   </h2>
