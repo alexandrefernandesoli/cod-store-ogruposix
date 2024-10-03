@@ -61,12 +61,3 @@ Siga os passos abaixo para rodar o projeto localmente:
    npm run build
    npm start
    ```
-
-
-## Contribuição
-
-Este projeto é um trabalho individual criado para fins de avaliação profissional. Sugestões são bem-vindas!
-
-## Licença
-
-Este projeto está sob a licença MIT.
