@@ -9,7 +9,7 @@ import ProductModalInfo from "./ProductModalInfo";
 
 export default function ProductModal({ product }: { product: Product }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(true);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   function openModal() {
     setIsOpen(true);
