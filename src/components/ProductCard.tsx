@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
         alt={product.name}
         width={200}
         height={200}
-        className="self-center"
+        className="self-center mb-4"
       />
 
       <div className="text-xl font-bold truncate mb-2" title={product.name}>

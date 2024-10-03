@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ProductModalInfo({ product }: { product: Product }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center w-full">
       <Image
         className="w-24"
         width={250}

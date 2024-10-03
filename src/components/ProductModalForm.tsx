@@ -105,6 +105,13 @@ export default function ProductModalForm({
       <h3 className="text-xl mb-3">Endereço de entrega</h3>
 
       <Input
+        {...register("street", { required: "Campo obrigatório" })}
+        label="Rua"
+        placeholder="Digite a rua"
+        error={errors.street}
+      />
+
+      <Input
         {...register("street_number", {
           required: "Campo obrigatório",
           pattern: { value: /^[0-9]+$/, message: "Digite apenas números" },
@@ -113,13 +120,6 @@ export default function ProductModalForm({
         placeholder="Digite o número"
         error={errors.street_number}
         type="number"
-      />
-
-      <Input
-        {...register("street", { required: "Campo obrigatório" })}
-        label="Rua"
-        placeholder="Digite a rua"
-        error={errors.street}
       />
 
       <Input
