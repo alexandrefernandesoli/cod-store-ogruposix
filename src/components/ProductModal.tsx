@@ -13,10 +13,12 @@ export default function ProductModal({ product }: { product: Product }) {
 
   function openModal() {
     setIsOpen(true);
+    document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     setIsOpen(false);
+    document.body.style.overflow = "";
     setShowThankYou(false);
   }
 
@@ -31,11 +33,11 @@ export default function ProductModal({ product }: { product: Product }) {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           style={{ display: isOpen ? "flex" : "none" }}
-          onClick={closeModal}
+          onClick={() => (showThankYou ? closeModal() : null)}
         >
           <div
             className="relative w-full max-w-4xl max-h-screen overflow-auto p-8 bg-white rounded-lg shadow-lg"
-            onClick={(e) => (!showThankYou ? e.stopPropagation() : null)}
+            onClick={(e) => e.stopPropagation()}
           >
             <button className="absolute top-0 right-0 p-4" onClick={closeModal}>
               <CloseIcon />

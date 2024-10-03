@@ -1,10 +1,14 @@
 import { Product } from "@/lib/api";
-import { formatDiscount, formatDiscountPercentage, formatPrice } from "@/lib/utils";
+import {
+  formatDiscount,
+  formatDiscountPercentage,
+  formatPrice,
+} from "@/lib/utils";
 import Image from "next/image";
 
 export default function ProductModalInfo({ product }: { product: Product }) {
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex flex-col items-center justify-center w-full h-full">
       <Image
         className="w-24"
         width={250}
