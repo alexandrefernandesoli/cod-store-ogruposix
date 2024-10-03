@@ -1,11 +1,11 @@
 "use client";
 
 import { Product } from "@/lib/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
+import CloseIcon from "./CloseIcon";
 import ProductModalForm from "./ProductModalForm";
 import ProductModalInfo from "./ProductModalInfo";
-import CloseIcon from "./CloseIcon";
 
 export default function ProductModal({ product }: { product: Product }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +26,25 @@ export default function ProductModal({ product }: { product: Product }) {
     setShowThankYou(true);
   }
 
+  function adjustModalHeight() {
+    const height = window.innerHeight;
+    const modal = document.querySelector(".modal") as HTMLElement;
+
+    if (modal) {
+      modal.style.height = `${height}px`;
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("load", adjustModalHeight);
+    window.addEventListener("resize", adjustModalHeight);
+
+    return () => {
+      window.removeEventListener("load", adjustModalHeight);
+      window.removeEventListener("resize", adjustModalHeight);
+    };
+  }, []);
+
   return (
     <>
       <Button onClick={openModal}>Comprar</Button>
@@ -36,7 +55,7 @@ export default function ProductModal({ product }: { product: Product }) {
           onClick={() => (showThankYou ? closeModal() : null)}
         >
           <div
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-auto p-8 bg-white rounded-lg shadow-lg"
+            className="modal relative w-full max-w-4xl max-h-[100dvh] overflow-auto p-8 bg-white rounded-lg shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button className="absolute top-0 right-0 p-4" onClick={closeModal}>
